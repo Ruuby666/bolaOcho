@@ -12,9 +12,10 @@ import { JsonPipe } from '@angular/common';
 export class ConsejoComponent {
   constructor(private consejoService: ConsejoService) {}
 
-  respuesta: Data[] = [];
-  getAdvice(){
-    this.consejoService.getAdvice().subscribe(this.respuesta = this.consejoService.respuesta;);
+  respuesta: string = '';
 
-  };
+  getAdvice(): void {
+    this.consejoService.getAdvice();
+    this.respuesta = this.consejoService.respuesta.advice;
+  }
 }
